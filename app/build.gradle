@@ -72,6 +72,10 @@ androidExtensions {
 }
 
 dependencies {
+    debugImplementation deps.leakCanary.debug
+    debugImplementation deps.leakCanary.fragment
+
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation deps.kotlin.stdlib

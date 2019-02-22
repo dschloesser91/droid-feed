@@ -9,6 +9,7 @@ import com.droidfeed.di.DaggerAppComponent
 import com.droidfeed.util.appOpenCount
 import com.droidfeed.util.logThrowable
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -28,6 +29,12 @@ class App : Application(), HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return
+        }
+
+        LeakCanary.install(this)
+
         initDagger()
 
         initSources()

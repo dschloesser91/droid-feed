@@ -19,6 +19,7 @@ ext.versions = [
         firebase_core         : '16.0.7',
         firebase_config       : '16.3.0',
         firebase_firestore    : '18.0.1',
+        leakCanary            : '1.6.3',
         okHttp                : '3.13.1',
         jSoup                 : '1.11.3',
         gson                  : '2.8.5',
@@ -105,6 +106,11 @@ deps.okhttp = [
         logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okHttp"
 ]
 
+deps.leakCanary = [
+        debug   : "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
+        fragment: "com.squareup.leakcanary:leakcanary-support-fragment:$versions.leakCanary"
+]
+
 deps.crashlytics = "com.crashlytics.sdk.android:crashlytics:$versions.crashlytics"
 deps.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
 deps.material_design = "com.google.android.material:material:$versions.material"
@@ -115,4 +121,4 @@ deps.arch_testing = "android.arch.core:core-testing:$versions.android_core_testi
 deps.lottie = "com.airbnb.android:lottie:$versions.lottie"
 deps.jsoup = "org.jsoup:jsoup:$versions.jSoup"
 deps.gson = "com.google.code.gson:gson:$versions.gson"
-deps.detekt_formatting = "io.gitlab.arturbosch.detekt:detekt-formatting:${versions.detekt_ktlint}"
+deps.detekt_formatting = "io.gitlab.arturbosch.detekt:detekt-formatting:$versions.detekt_ktlint"
